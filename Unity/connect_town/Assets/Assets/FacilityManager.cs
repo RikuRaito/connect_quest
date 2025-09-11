@@ -5,6 +5,25 @@ using UnityEngine.UI;
 public class FacilityManager : MonoBehaviour
 {
     [System.Serializable]
+    public class FacilityLevel
+    {
+        public GameObject prefab;
+        public Vector3 scale;
+        public Vector3 position;
+    }
+
+    [System.Serializable]
+    public class FacilityPrefabSet
+    {
+        public string name;
+        public FacilityLevel[] levels;
+    }
+
+    public List<FacilityPrefabSet> facilityPrefabs;
+
+    private Dictionary<string, GameObject> currentFacilityInstances = new Dictionary<string, GameObject>();
+
+    [System.Serializable]
     public class FacilityData
     {
         public int training;
@@ -14,8 +33,6 @@ public class FacilityManager : MonoBehaviour
         public int gym;
         public int farm;
         public int blacksmith;
-
-
     }
 
     public void ReceiveFacilityData(string json)
@@ -41,25 +58,47 @@ public class FacilityManager : MonoBehaviour
 
     void SetFacilityLevel(string baseName, int level)
     {
-        int maxLevel = 3;
-        for (int i = 0; i <= maxLevel; i++)
+        if (currentFacilityInstances.ContainsKey(baseName))
         {
-            string objName;
-            if (i == 0)
+            if (currentFacilityInstances[baseName] != null)
             {
-                objName = baseName + "UnderBuilding";
+                Destroy(currentFacilityInstances[baseName]);
             }
-            else
-            {
-                objName = baseName + "Lv" + i;
-            }
-
-            GameObject obj = GameObject.Find(objName);
-            if (obj != null)
-            {
-                obj.SetActive(i == level);
-            }
+            currentFacilityInstances.Remove(baseName);
         }
+
+        FacilityPrefabSet prefabSet = facilityPrefabs.Find(f => f.name == baseName);
+        if (prefabSet == null)
+        {
+            Debug.LogWarning("FacilityPrefabSet not found for: " + baseName);
+            return;
+        }
+
+        if(level < 0 || level >= prefabSet.levels.Length)
+        {
+            Debug.LogWarning("Invalid level " + level + " for facility " + baseName);
+            return;
+        }
+
+        FacilityLevel facilityLevel = prefabSet.levels[level];
+        if (facilityLevel.prefab == null)
+        {
+            Debug.LogWarning("Prefab is null for " + baseName + " level " + level);
+            return;
+        }
+
+        GameObject instance = Instantiate(
+            facilityLevel.prefab,
+            facilityLevel.position,
+            Quaternion.identity
+        );
+        instance.transform.localScale = facilityLevel.scale;
+        SpriteRenderer spriteRenderer = instance.GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.sortingLayerName = "Foreground";
+        }
+        currentFacilityInstances[baseName] = instance;
     }
     void Start()
     {
