@@ -24,3 +24,58 @@ Thumbs.db
 *.apk
 *.aab
 *.unitypackage
+
+# Unity build output
+Unity_built_connect_town/
+*.a
+*.lib
+*.dll
+*.exe
+*.apk
+*.ipa
+*.xcworkspace/
+*.xcodeproj/
+
+# Unity build output inside Swift project
+swift_connect_quest/Unity_built_connect_town/
+
+# すでにある ignore は残す
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+
+# Crash Reports
+sysinfo.txt
+
+# Visual Studio cache
+.vs/
+
+# Rider cache
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.apk
+*.aab
+*.unitypackage
+
+# Unity build output
+Unity_built/
+*.a
+*.lib
+*.dll
+*.exe
+*.apk
+*.ipa
+*.xcworkspace/
+*.xcodeproj/
+
+# Swift 側に出力される Unity ビルド成果物を無視
+swift_connect_quest/Unity_built_connect_town/
