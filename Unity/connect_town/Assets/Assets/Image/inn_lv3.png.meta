@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 7ecc155d1c58142aebbd16f6aba030b5
+guid: 803660d779382402f9a3c8473d56dbf7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4804446361586417100
-    second: map_0
+      213: 5636530206830672627
+    second: inn_lv3_0
+  - first:
+      213: -3460067928554060846
+    second: inn_lv3_1
+  - first:
+      213: 7140912359601333788
+    second: inn_lv3_2
+  - first:
+      213: 3242140498103436224
+    second: inn_lv3_3
+  - first:
+      213: -917299872201238362
+    second: inn_lv3_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: map_0
+      name: inn_lv3_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 111
         y: 0
-        width: 1024
-        height: 1024
+        width: 864
+        height: 998
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ccdb6c4c282dca240800000000000000
-      internalID: 4804446361586417100
+      spriteID: 3fab6e70c5af83e40800000000000000
+      internalID: 5636530206830672627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inn_lv3_1
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 986
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d340db1d8e5bffc0800000000000000
+      internalID: -3460067928554060846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inn_lv3_2
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 986
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16eb36f4fd991360800000000000000
+      internalID: 7140912359601333788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inn_lv3_3
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 986
+        width: 27
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c30d5dfa956efc20800000000000000
+      internalID: 3242140498103436224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inn_lv3_4
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 986
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a81fe450a81543f0800000000000000
+      internalID: -917299872201238362
       vertices: []
       indices: 
       edges: []
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      map_0: 4804446361586417100
+      inn_lv3_0: 5636530206830672627
+      inn_lv3_1: -3460067928554060846
+      inn_lv3_2: 7140912359601333788
+      inn_lv3_3: 3242140498103436224
+      inn_lv3_4: -917299872201238362
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

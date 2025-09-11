@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 7ecc155d1c58142aebbd16f6aba030b5
+guid: 5d65b0b742f5d4bb894b26c1732203b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4804446361586417100
-    second: map_0
+      213: -3654827635807839796
+    second: farm_lv1_0
+  - first:
+      213: -8192394974505937593
+    second: farm_lv1_1
+  - first:
+      213: -4614800551411444842
+    second: farm_lv1_2
+  - first:
+      213: 1341035750356758684
+    second: farm_lv1_3
+  - first:
+      213: -4245639317389086727
+    second: farm_lv1_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: map_0
+      name: farm_lv1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1024
-        height: 1024
+        height: 1534
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ccdb6c4c282dca240800000000000000
-      internalID: 4804446361586417100
+      spriteID: cc9946c11a1774dc0800000000000000
+      internalID: -3654827635807839796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm_lv1_1
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 322
+        width: 548
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 745d0e40d24ce4e80800000000000000
+      internalID: -8192394974505937593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm_lv1_2
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 326
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69318d7495fe4ffb0800000000000000
+      internalID: -4614800551411444842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm_lv1_3
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 491
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c903d1be8e05c9210800000000000000
+      internalID: 1341035750356758684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm_lv1_4
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 462
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ff679209857415c0800000000000000
+      internalID: -4245639317389086727
       vertices: []
       indices: 
       edges: []
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      map_0: 4804446361586417100
+      farm_lv1_0: -3654827635807839796
+      farm_lv1_1: -8192394974505937593
+      farm_lv1_2: -4614800551411444842
+      farm_lv1_3: 1341035750356758684
+      farm_lv1_4: -4245639317389086727
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
