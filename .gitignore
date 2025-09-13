@@ -78,4 +78,5 @@ Unity_built/
 *.xcodeproj/
 
 # Swift 側に出力される Unity ビルド成果物を無視
-swift_connect_quest/Unity_built_connect_town/
+swift_connect_quest/Build_test3/
+swift_connect_quest/Trash/
