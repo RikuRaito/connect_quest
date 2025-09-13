@@ -80,3 +80,6 @@ Unity_built/
 # Swift 側に出力される Unity ビルド成果物を無視
 swift_connect_quest/Build_test3/
 swift_connect_quest/Trash/
+
+Build_test3/
+Trash/
