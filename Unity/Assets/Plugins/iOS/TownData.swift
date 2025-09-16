@@ -24,9 +24,18 @@ func UnitySendMessage(_ obj: UnsafePointer<CChar>, _ method: UnsafePointer<CChar
             UnitySendMessage("FacilityManager", "ReceiveFacilityData", jsonString)
         }
     }
+
+    func testAppgrade() {
+
+    }
 }
 
 @_cdecl("sendFacilityData")
 public func sendFacilityData() {
     TownData.shared.sendFacilityData()
+}
+
+@_cdecl("testAppgrade")
+public func testAppgrade() {
+    TownData.shared.testAppgrade()
 }
