@@ -1,9 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine.UI;
 
 public class FacilityManager : MonoBehaviour
 {
+    [DllImport("__Internal")]
+    private static extern void sendFacilityData();
     [System.Serializable]
     public class FacilityLevel
     {
@@ -34,6 +37,8 @@ public class FacilityManager : MonoBehaviour
         public int farm;
         public int blacksmith;
     }
+
+
 
     public void ReceiveFacilityData(string json)
     {
@@ -102,10 +107,10 @@ public class FacilityManager : MonoBehaviour
     }
     void Start()
     {
-        
+        sendFacilityData();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
