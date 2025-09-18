@@ -25,8 +25,8 @@ func UnitySendMessage(_ obj: UnsafePointer<CChar>, _ method: UnsafePointer<CChar
         }
     }
 
-    func testAppgrade() {
-
+    func upgradeFacility() {
+        //ここでサーバーにアップグレードに関する情報を送信する
     }
 }
 
@@ -35,7 +35,8 @@ public func sendFacilityData() {
     TownData.shared.sendFacilityData()
 }
 
-@_cdecl("testAppgrade")
+@_cdecl("Appgrade")
 public func testAppgrade() {
-    TownData.shared.testAppgrade()
+    TownData.shared.upgradeFacility()
 }
+
