@@ -2,11 +2,11 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine.UI;
+using System.Security.Cryptography;
 
 public class FacilityManager : MonoBehaviour
 {
-    [DllImport("__Internal")]
-    private static extern void sendFacilityData();
+    
     [System.Serializable]
     public class FacilityLevel
     {
@@ -38,7 +38,43 @@ public class FacilityManager : MonoBehaviour
         public int blacksmith;
     }
 
+    private FacilityData currentData = new FacilityData();
 
+    public void UpgradeFacility(string facilityName)
+    {
+        switch (facilityName)
+        {
+            case "training":
+                currentData.training++;
+                SetFacilityLevel("training", currentData.training);
+                break;
+            case "school":
+                currentData.school++;
+                SetFacilityLevel("school", currentData.school);
+                break;
+            case "restaurant":
+                currentData.restaurant++;
+                SetFacilityLevel("restaurant", currentData.restaurant);
+                break;
+            case "inn":
+                currentData.inn++;
+                SetFacilityLevel("inn", currentData.inn);
+                break;
+            case "gym":
+                currentData.gym++;
+                SetFacilityLevel("gym", currentData.gym);
+                break;
+            case "farm":
+                currentData.farm++;
+                SetFacilityLevel("farm", currentData.farm);
+                break;
+            case "blacksmith":
+                currentData.blacksmith++;
+                SetFacilityLevel("farm", currentData.blacksmith);
+                break;
+        }
+
+    }
 
     public void ReceiveFacilityData(string json)
     {
@@ -107,7 +143,7 @@ public class FacilityManager : MonoBehaviour
     }
     void Start()
     {
-        sendFacilityData();
+        
     }
 
 
