@@ -8,7 +8,24 @@ using System.Data.Common;
 
 public class FacilityManager : MonoBehaviour
 {
-    
+    // このクラスの唯一のインスタンスを保持する静的変数
+    public static FacilityManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        // 他にインスタンスが存在しないかチェック
+        if (Instance != null && Instance != this)
+        {
+            // 既に存在する場合は、このオブジェクトを破棄する
+            Destroy(gameObject);
+            return;
+        }
+        // このインスタンスを唯一のものとして設定する
+        Instance = this;
+
+        // (もしシーンをまたいでこのマネージャーを維持したい場合は以下のコメントを外してください)
+        // DoNotDestroyOnLoad(gameObject);
+    }
     [System.Serializable]
     public class FacilityLevel
     {
@@ -159,7 +176,13 @@ public class FacilityManager : MonoBehaviour
     }
     void Start()
     {
-        
+        // Unityエディタでの実行時のみ、テスト用のデータを読み込む
+    #if UNITY_EDITOR
+        Debug.Log("UNITY_EDITOR: テスト用の施設データをロードします。");
+        // blacksmithのレベルが5であるという想定のテストデータ（JSON文字列）
+        string testJson = "{\"training\":1, \"school\":2, \"restaurant\":3, \"inn\":2, \"gym\":0, \"farm\":1, \"blacksmith\":1}";
+        ReceiveFacilityData(testJson);
+#endif
     }
 
 

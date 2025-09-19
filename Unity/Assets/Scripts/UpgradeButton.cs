@@ -9,6 +9,6 @@ public class UpgradeButton : MonoBehaviour
     public void OnClickUpgrade()
     {
         Debug.Log($"[UpgradeButton] Upgrade pressed: {facilityName}");
-        facilityManager.UpgradeFacility(facilityName);
+        FacilityManager.Instance.UpgradeFacility(facilityName);
     }
 }
