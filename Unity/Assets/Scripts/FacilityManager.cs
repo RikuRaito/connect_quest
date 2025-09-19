@@ -1,163 +1,126 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using UnityEngine.UI;
-using System.Security.Cryptography;
-using System.Runtime.CompilerServices;
-using System.Data.Common;
 
 public class FacilityManager : MonoBehaviour
 {
-    // このクラスの唯一のインスタンスを保持する静的変数
+    // シングルトン
     public static FacilityManager Instance { get; private set; }
 
     private void Awake()
     {
-        // 他にインスタンスが存在しないかチェック
         if (Instance != null && Instance != this)
         {
-            // 既に存在する場合は、このオブジェクトを破棄する
             Destroy(gameObject);
             return;
         }
-        // このインスタンスを唯一のものとして設定する
         Instance = this;
-
-        // (もしシーンをまたいでこのマネージャーを維持したい場合は以下のコメントを外してください)
-        // DoNotDestroyOnLoad(gameObject);
     }
+
+    // ----------------------------
+    // データ定義
+    // ----------------------------
+
     [System.Serializable]
     public class FacilityLevel
     {
         public GameObject prefab;
-        public Vector3 scale;
-        public Vector3 position;
+        public Vector3 scale = Vector3.one;
+        public Vector3 position = Vector3.zero;
     }
 
     [System.Serializable]
     public class FacilityPrefabSet
     {
-        public string name;
-        public FacilityLevel[] levels;
+        public string name;              // training / school / restaurant / ...
+        public FacilityLevel[] levels;   // [0] = レベル0, [1] = レベル1, ...
     }
 
-    public List<FacilityPrefabSet> facilityPrefabs;
+    public List<FacilityPrefabSet> facilityPrefabs; // Inspectorで設定
 
-    private Dictionary<string, GameObject> currentFacilityInstances = new Dictionary<string, GameObject>();
+    // 施設の現在レベル
+    private Dictionary<string, int> currentLevels = new Dictionary<string, int>();
 
-    [System.Serializable]
-    public class FacilityData
+    // シーン上に存在する施設オブジェクト
+    private Dictionary<string, GameObject> currentInstances = new Dictionary<string, GameObject>();
+
+    // ----------------------------
+    // 初期化
+    // ----------------------------
+
+    void Start()
     {
-        public int training;
-        public int school;
-        public int restaurant;
-        public int inn;
-        public int gym;
-        public int farm;
-        public int blacksmith;
+        // 全施設をレベル0で生成
+        foreach (var prefabSet in facilityPrefabs)
+        {
+            currentLevels[prefabSet.name] = 0;
+            SetFacilityLevel(prefabSet.name, 0);
+        }
+
+#if UNITY_EDITOR
+        Debug.Log("FacilityManager: 全施設をレベル0から配置しました。");
+#endif
     }
 
-    private FacilityData currentData = new FacilityData();
+    // ----------------------------
+    // アップグレード処理
+    // ----------------------------
 
     public void UpgradeFacility(string facilityName)
     {
-        Debug.Log("Before upgrade blacksmith lv: " + currentData.blacksmith);
-        switch (facilityName)
+        if (!currentLevels.ContainsKey(facilityName))
         {
-            case "training":
-                currentData.training++;
-                SetFacilityLevel("training", currentData.training);
-                break;
-            case "school":
-                currentData.school++;
-                SetFacilityLevel("school", currentData.school);
-                break;
-            case "restaurant":
-                currentData.restaurant++;
-                SetFacilityLevel("restaurant", currentData.restaurant);
-                break;
-            case "inn":
-                currentData.inn++;
-                SetFacilityLevel("inn", currentData.inn);
-                break;
-            case "gym":
-                currentData.gym++;
-                SetFacilityLevel("gym", currentData.gym);
-                break;
-            case "farm":
-                currentData.farm++;
-                SetFacilityLevel("farm", currentData.farm);
-                break;
-            case "blacksmith":
-                currentData.blacksmith++;
-                Debug.Log("blacksmith lv: " + currentData.blacksmith);
-                SetFacilityLevel("blacksmith", currentData.blacksmith);
-                break;
-            default:
-                Debug.LogWarning("Unknown Facility" + facilityName);
-                break;
-        }
-
-    }
-
-    public void ReceiveFacilityData(string json)
-    {
-        var data = JsonUtility.FromJson<FacilityData>(json);
-
-        //swiftから渡ってきたデータをcurrentDataにコピーする
-        currentData.training = data.training;
-        currentData.school = data.school;
-        currentData.restaurant = data.restaurant;
-        currentData.inn = data.inn;
-        currentData.gym = data.gym;
-        currentData.farm = data.farm;
-        currentData.blacksmith = data.blacksmith;
-
-        Debug.Log("training: " + currentData.training);
-        Debug.Log("school: " + currentData.school);
-        Debug.Log("restaurant: " + currentData.restaurant);
-        Debug.Log("inn: " + currentData.inn);
-        Debug.Log("gym: " + currentData.gym);
-        Debug.Log("farm: " + currentData.farm);
-        Debug.Log("blacksmith: " + currentData.blacksmith);
-
-        SetFacilityLevel("training", currentData.training);
-        SetFacilityLevel("school", currentData.school);
-        SetFacilityLevel("restaurant", currentData.restaurant);
-        SetFacilityLevel("inn", currentData.inn);
-        SetFacilityLevel("gym", currentData.gym);
-        SetFacilityLevel("farm", currentData.farm);
-        SetFacilityLevel("blacksmith", currentData.blacksmith);
-    }
-
-    void SetFacilityLevel(string baseName, int level)
-    {
-        if (currentFacilityInstances.ContainsKey(baseName))
-        {
-            if (currentFacilityInstances[baseName] != null)
-            {
-                Destroy(currentFacilityInstances[baseName]);
-            }
-            currentFacilityInstances.Remove(baseName);
-        }
-
-        FacilityPrefabSet prefabSet = facilityPrefabs.Find(f => f.name == baseName);
-        if (prefabSet == null)
-        {
-            Debug.LogWarning("FacilityPrefabSet not found for: " + baseName);
+            Debug.LogWarning($"Facility {facilityName} が存在しません");
             return;
         }
 
-        if(level < 0 || level >= prefabSet.levels.Length)
+        int nextLevel = currentLevels[facilityName] + 1;
+
+        FacilityPrefabSet prefabSet = facilityPrefabs.Find(f => f.name == facilityName);
+        if (prefabSet == null)
         {
-            Debug.LogWarning("Invalid level " + level + " for facility " + baseName);
+            Debug.LogWarning($"PrefabSet が見つかりません: {facilityName}");
+            return;
+        }
+
+        if (nextLevel >= prefabSet.levels.Length)
+        {
+            Debug.LogWarning($"{facilityName} は最大レベルに到達しています");
+            return;
+        }
+
+        currentLevels[facilityName] = nextLevel;
+        SetFacilityLevel(facilityName, nextLevel);
+
+        Debug.Log($"{facilityName} を Lv.{nextLevel} にアップグレードしました");
+    }
+
+    // ----------------------------
+    // レベル設定（生成 & 置き換え）
+    // ----------------------------
+
+    private void SetFacilityLevel(string baseName, int level)
+    {
+        // 古いオブジェクトがあれば削除
+        if (currentInstances.ContainsKey(baseName))
+        {
+            if (currentInstances[baseName] != null)
+            {
+                Destroy(currentInstances[baseName]);
+            }
+            currentInstances.Remove(baseName);
+        }
+
+        FacilityPrefabSet prefabSet = facilityPrefabs.Find(f => f.name == baseName);
+        if (prefabSet == null || level < 0 || level >= prefabSet.levels.Length)
+        {
+            Debug.LogWarning($"Facility {baseName} のレベル {level} は不正です");
             return;
         }
 
         FacilityLevel facilityLevel = prefabSet.levels[level];
         if (facilityLevel.prefab == null)
         {
-            Debug.LogWarning("Prefab is null for " + baseName + " level " + level);
+            Debug.LogWarning($"{baseName} Lv.{level} のPrefabが未設定です");
             return;
         }
 
@@ -167,27 +130,24 @@ public class FacilityManager : MonoBehaviour
             Quaternion.identity
         );
         instance.transform.localScale = facilityLevel.scale;
+
         SpriteRenderer spriteRenderer = instance.GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
             spriteRenderer.sortingLayerName = "Foreground";
         }
-        currentFacilityInstances[baseName] = instance;
-    }
-    void Start()
-    {
-        // Unityエディタでの実行時のみ、テスト用のデータを読み込む
-    #if UNITY_EDITOR
-        Debug.Log("UNITY_EDITOR: テスト用の施設データをロードします。");
-        // blacksmithのレベルが5であるという想定のテストデータ（JSON文字列）
-        string testJson = "{\"training\":1, \"school\":2, \"restaurant\":3, \"inn\":2, \"gym\":0, \"farm\":1, \"blacksmith\":1}";
-        ReceiveFacilityData(testJson);
-#endif
+
+        currentInstances[baseName] = instance;
     }
 
+    // ----------------------------
+    // 現在レベルの取得
+    // ----------------------------
 
-    void Update()
+    public int GetFacilityLevel(string facilityName)
     {
-        
+        if (currentLevels.ContainsKey(facilityName))
+            return currentLevels[facilityName];
+        return -1;
     }
 }

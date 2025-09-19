@@ -5,15 +5,6 @@ TextureImporter:
   - first:
       213: -497161143084481473
     second: button_dangeon_0
-  - first:
-      213: -6675738801616213505
-    second: button_dangeon_1
-  - first:
-      213: 7057704473941613019
-    second: button_dangeon_2
-  - first:
-      213: -4569087003860531403
-    second: button_dangeon_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,10 +116,10 @@ TextureImporter:
       name: button_dangeon_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 1020
-        height: 1019
+        width: 912
+        height: 429
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,72 +130,6 @@ TextureImporter:
       bones: []
       spriteID: f34825e039ab919f0800000000000000
       internalID: -497161143084481473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button_dangeon_1
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 589
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ff9af54fde20b53a0800000000000000
-      internalID: -6675738801616213505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button_dangeon_2
-      rect:
-        serializedVersion: 2
-        x: 979
-        y: 397
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bd999f263d002f160800000000000000
-      internalID: 7057704473941613019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button_dangeon_3
-      rect:
-        serializedVersion: 2
-        x: 979
-        y: 356
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5370a0bf3975790c0800000000000000
-      internalID: -4569087003860531403
       vertices: []
       indices: 
       edges: []
@@ -224,9 +149,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       button_dangeon_0: -497161143084481473
-      button_dangeon_1: -6675738801616213505
-      button_dangeon_2: 7057704473941613019
-      button_dangeon_3: -4569087003860531403
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
