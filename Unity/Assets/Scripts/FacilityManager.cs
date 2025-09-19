@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine.UI;
 using System.Security.Cryptography;
+using System.Runtime.CompilerServices;
+using System.Data.Common;
 
 public class FacilityManager : MonoBehaviour
 {
@@ -42,6 +44,7 @@ public class FacilityManager : MonoBehaviour
 
     public void UpgradeFacility(string facilityName)
     {
+        Debug.Log("Before upgrade blacksmith lv: " + currentData.blacksmith);
         switch (facilityName)
         {
             case "training":
@@ -70,7 +73,11 @@ public class FacilityManager : MonoBehaviour
                 break;
             case "blacksmith":
                 currentData.blacksmith++;
-                SetFacilityLevel("farm", currentData.blacksmith);
+                Debug.Log("blacksmith lv: " + currentData.blacksmith);
+                SetFacilityLevel("blacksmith", currentData.blacksmith);
+                break;
+            default:
+                Debug.LogWarning("Unknown Facility" + facilityName);
                 break;
         }
 
@@ -78,23 +85,32 @@ public class FacilityManager : MonoBehaviour
 
     public void ReceiveFacilityData(string json)
     {
-        FacilityData data = JsonUtility.FromJson<FacilityData>(json);
+        var data = JsonUtility.FromJson<FacilityData>(json);
 
-        Debug.Log("training: " + data.training);
-        Debug.Log("school: " + data.school);
-        Debug.Log("restaurant: " + data.restaurant);
-        Debug.Log("inn: " + data.inn);
-        Debug.Log("gym: " + data.gym);
-        Debug.Log("farm: " + data.farm);
-        Debug.Log("blacksmith: " + data.blacksmith);
+        //swiftから渡ってきたデータをcurrentDataにコピーする
+        currentData.training = data.training;
+        currentData.school = data.school;
+        currentData.restaurant = data.restaurant;
+        currentData.inn = data.inn;
+        currentData.gym = data.gym;
+        currentData.farm = data.farm;
+        currentData.blacksmith = data.blacksmith;
 
-        SetFacilityLevel("training", data.training);
-        SetFacilityLevel("school", data.school);
-        SetFacilityLevel("restaurant", data.restaurant);
-        SetFacilityLevel("inn", data.inn);
-        SetFacilityLevel("gym", data.gym);
-        SetFacilityLevel("farm", data.farm);
-        SetFacilityLevel("blacksmith", data.blacksmith);
+        Debug.Log("training: " + currentData.training);
+        Debug.Log("school: " + currentData.school);
+        Debug.Log("restaurant: " + currentData.restaurant);
+        Debug.Log("inn: " + currentData.inn);
+        Debug.Log("gym: " + currentData.gym);
+        Debug.Log("farm: " + currentData.farm);
+        Debug.Log("blacksmith: " + currentData.blacksmith);
+
+        SetFacilityLevel("training", currentData.training);
+        SetFacilityLevel("school", currentData.school);
+        SetFacilityLevel("restaurant", currentData.restaurant);
+        SetFacilityLevel("inn", currentData.inn);
+        SetFacilityLevel("gym", currentData.gym);
+        SetFacilityLevel("farm", currentData.farm);
+        SetFacilityLevel("blacksmith", currentData.blacksmith);
     }
 
     void SetFacilityLevel(string baseName, int level)

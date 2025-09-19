@@ -8,6 +8,7 @@ public class UpgradeButton : MonoBehaviour
     // ボタンの OnClick で呼ばれる
     public void OnClickUpgrade()
     {
-        // facilityManager.UpgradeFacility(facilityName);
+        Debug.Log($"[UpgradeButton] Upgrade pressed: {facilityName}");
+        facilityManager.UpgradeFacility(facilityName);
     }
 }
