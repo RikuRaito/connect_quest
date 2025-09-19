@@ -14,8 +14,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+
         startGPSOverlay();
         sendFacilityData();
+
     }
 
     // Update is called once per frame

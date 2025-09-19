@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7582770025466463246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6495858302371282297}
+  - component: {fileID: 1323207759749272771}
+  m_Layer: 0
+  m_Name: FacilityManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6495858302371282297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7582770025466463246}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.23385, y: -0.07625, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1323207759749272771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7582770025466463246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e2fe02754734a2ba59bcea0b736cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FacilityManager
+  facilityPrefabs:
+  - name: blacksmith
+    levels:
+    - prefab: {fileID: 1358623287069523329, guid: 32823d50eb0644c6b9887245a3cc4126, type: 3}
+      scale: {x: 0.2, y: 0.2, z: 0.2}
+      position: {x: 2.68, y: 3.23, z: 0}
+    - prefab: {fileID: 5177422787857858897, guid: 6475bb093697d4a909222453cdb46dce, type: 3}
+      scale: {x: 0.2, y: 0.2, z: 1}
+      position: {x: 2.67, y: 2.933, z: 0}
+    - prefab: {fileID: 4811680519840985511, guid: 3c8c67e7462de42489880c64b1512a83, type: 3}
+      scale: {x: 0.2, y: 0.2, z: 1}
+      position: {x: 2.66, y: 3.19, z: 0}
+    - prefab: {fileID: 8634166780064252712, guid: 323061ac5b77449a387874e73f90a6c2, type: 3}
+      scale: {x: 0.2, y: 0.2, z: 1}
+      position: {x: 2.65, y: 3.122, z: 0}
+  - name: farm
+    levels:
+    - prefab: {fileID: 1358623287069523329, guid: 32823d50eb0644c6b9887245a3cc4126, type: 3}
+      scale: {x: 0.2, y: 0.2, z: 0.2}
+      position: {x: -2.008, y: 1.288, z: 0}
+    - prefab: {fileID: 7757358901586950778, guid: 4344117f225354a7784b02aa435aec24, type: 3}
+      scale: {x: 0.2, y: 1.47, z: 1}
+      position: {x: -2, y: 1.19, z: 0}
+    - prefab: {fileID: 5523614557900846149, guid: 168237bcccfb04ba59a04b2fe3d896b8, type: 3}
+      scale: {x: 0.2, y: 0.2, z: 1}
+      position: {x: -2, y: 1.7, z: 0}
+    - prefab: {fileID: 2710691562364736287, guid: 112a4590ef01340f28907f6ced05208a, type: 3}
+      scale: {x: 0.45, y: 0.45, z: 1}
+      position: {x: -2, y: 0.438, z: 0}
+  - name: training
+    levels:
+    - prefab: {fileID: 0}
+      scale: {x: 0.2, y: 0.2, z: 0.2}
+      position: {x: 1.06, y: 1.288, z: 0}
+    - prefab: {fileID: 3449379623728565194, guid: ad60b2e16f7a6463199fef3658d6e053, type: 3}
+      scale: {x: 0.2, y: 0.2, z: 1}
+      position: {x: 1.06, y: 1.51, z: 0}
+    - prefab: {fileID: 8328742934592737514, guid: c2307ca2c042343168c1647281b93817, type: 3}
+      scale: {x: 0.22, y: 0.22, z: 1}
+      position: {x: 1.06, y: 0.71, z: 0}
+    - prefab: {fileID: 4509206361340194827, guid: f7ce6222bde2a46ae90509463661b6c9, type: 3}
+      scale: {x: 0.45, y: 0.45, z: 1}
+      position: {x: 1.06, y: 0.74, z: 0}
+  - name: school
+    levels:
+    - prefab: {fileID: 0}
+      scale: {x: 0.2, y: 0.2, z: 0.2}
+      position: {x: 3.04, y: -2.22, z: 0}
+    - prefab: {fileID: 5694658056429228574, guid: 407a3fd85285948fc90fcef5f12558fc, type: 3}
+      scale: {x: 0.24, y: 0.24, z: 1}
+      position: {x: 3.04, y: -2.42, z: 0}
+    - prefab: {fileID: 7368054947508923597, guid: 9f555ff476e7141e3a7444ebd20046b3, type: 3}
+      scale: {x: 0.26, y: 0.26, z: 1}
+      position: {x: 3.04, y: -2.2, z: 0}
+    - prefab: {fileID: 7749269159121154951, guid: 3ff2cd9ce5ec2428f9f6de162990e3c1, type: 3}
+      scale: {x: 0.27, y: 0.27, z: 1}
+      position: {x: 1.06, y: -2.42, z: 0}
+  - name: restaurant
+    levels:
+    - prefab: {fileID: 1358623287069523329, guid: 32823d50eb0644c6b9887245a3cc4126, type: 3}
+      scale: {x: 0.2, y: 0.2, z: 0.2}
+      position: {x: -1.46, y: -2.22, z: 0}
+    - prefab: {fileID: 6974294727654497685, guid: 39e21d7360c884d5abb1e2989318d6b2, type: 3}
+      scale: {x: 0.18, y: 0.18, z: 1}
+      position: {x: -1.46, y: -2.35, z: 0}
+    - prefab: {fileID: 6583646891406538251, guid: 515c3778c097443dbbfa233ef81a521b, type: 3}
+      scale: {x: 0.26, y: 0.26, z: 1}
+      position: {x: -1.46, y: -2.42, z: 0}
+    - prefab: {fileID: 3739984312258936681, guid: e66420e0b42494dc8ae7f1b18156c9de, type: 3}
+      scale: {x: 0.26, y: 0.26, z: 1}
+      position: {x: -1.46, y: -2.42, z: 0}
+  - name: inn
+    levels:
+    - prefab: {fileID: 0}
+      scale: {x: 0.18, y: 0.18, z: 0.2}
+      position: {x: -0.49, y: 3.15, z: 0}
+    - prefab: {fileID: 7606126075436513208, guid: bb6addb4b7adf4cd5825b001c14988d8, type: 3}
+      scale: {x: 0.2, y: 0.2, z: 1}
+      position: {x: -0.505, y: 3.065, z: 0}
+    - prefab: {fileID: 543798603920825662, guid: 9f466956cb380401e8ca7a474f888574, type: 3}
+      scale: {x: 0.2, y: 0.2, z: 1}
+      position: {x: -0.49, y: 3.1, z: 0}
+    - prefab: {fileID: 6579522433824442695, guid: b620998ad939b40d59f44b8e6da55c1f, type: 3}
+      scale: {x: 0.2, y: 0.2, z: 1}
+      position: {x: -0.49, y: 3.264, z: 0}
+  - name: gym
+    levels:
+    - prefab: {fileID: 0}
+      scale: {x: 0.18, y: 0.18, z: 0.2}
+      position: {x: 4.21, y: 1.21, z: 0}
+    - prefab: {fileID: 6906262569861868783, guid: 6b5d1de426b9b41c5a095086606ee4bc, type: 3}
+      scale: {x: 0.16, y: 0.16, z: 1}
+      position: {x: 4.21, y: 1.21, z: 0}
+    - prefab: {fileID: 7822823928781635868, guid: 53944417f828542bcba056cc9d0ca4c3, type: 3}
+      scale: {x: 0.16, y: 0.16, z: 1}
+      position: {x: 4.21, y: 1.2, z: 0}
+    - prefab: {fileID: 5918479006362462147, guid: b3b88fffaa2c94b3ca818c0870f97d43, type: 3}
+      scale: {x: 0.2, y: 0.2, z: 1}
+      position: {x: 4.21, y: 1.17, z: 0}
