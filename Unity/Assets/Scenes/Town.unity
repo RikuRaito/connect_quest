@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd3d1a797d384e42ac92ce73b5d9fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
-  sceneName: Dungeon
+  sceneName: Dungeon_connect
 --- !u!114 &513563095
 MonoBehaviour:
   m_ObjectHideFlags: 0
