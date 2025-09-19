@@ -180,7 +180,7 @@ public class FacilityManager : MonoBehaviour
     #if UNITY_EDITOR
         Debug.Log("UNITY_EDITOR: テスト用の施設データをロードします。");
         // blacksmithのレベルが5であるという想定のテストデータ（JSON文字列）
-        string testJson = "{\"training\":1, \"school\":2, \"restaurant\":3, \"inn\":2, \"gym\":0, \"farm\":1, \"blacksmith\":1}";
+        string testJson = "{\"training\":1, \"school\":1, \"restaurant\":1, \"inn\":1, \"gym\":1, \"farm\":1, \"blacksmith\":1}";
         ReceiveFacilityData(testJson);
 #endif
     }
