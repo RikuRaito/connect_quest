@@ -9,6 +9,15 @@ public class UpgradeButton : MonoBehaviour
     public void OnClickUpgrade()
     {
         Debug.Log($"[UpgradeButton] Upgrade pressed: {facilityName}");
+
+        if (FacilityManager.Instance == null)
+        {
+            Debug.LogError("FacilityManager.Instance is NULL!");
+            return;
+        }
+
         FacilityManager.Instance.UpgradeFacility(facilityName);
+        
+        PopupManager.Instance.ClosePopup();
     }
 }
