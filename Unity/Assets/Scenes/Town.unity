@@ -1815,21 +1815,45 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
-      propertyPath: facilityPrefabs.Array.data[2].levels.Array.data[0].prefab
+      propertyPath: facilityPrefabs.Array.data[0].levels.Array.data[0].prefab
       value: 
       objectReference: {fileID: 1358623287069523329, guid: 32823d50eb0644c6b9887245a3cc4126, type: 3}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[1].levels.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 1358623287069523329, guid: 973366e3a7cbd4db49efa8b2a8aa292f, type: 3}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[2].levels.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 1358623287069523329, guid: e4e9bf45e4b3b4cabb2dbd76dd8e2533, type: 3}
     - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
       propertyPath: facilityPrefabs.Array.data[3].levels.Array.data[0].prefab
       value: 
-      objectReference: {fileID: 1358623287069523329, guid: 32823d50eb0644c6b9887245a3cc4126, type: 3}
+      objectReference: {fileID: 1358623287069523329, guid: f97514c84ff784265abfa4fcdf6b4c42, type: 3}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[4].levels.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 1358623287069523329, guid: 95161474fda814ca5abba52393115c8e, type: 3}
     - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
       propertyPath: facilityPrefabs.Array.data[5].levels.Array.data[0].prefab
       value: 
-      objectReference: {fileID: 1358623287069523329, guid: 32823d50eb0644c6b9887245a3cc4126, type: 3}
+      objectReference: {fileID: 1358623287069523329, guid: 7bf6f59ff3b5e4d6a869040bd7ce9e32, type: 3}
     - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
       propertyPath: facilityPrefabs.Array.data[6].levels.Array.data[0].prefab
       value: 
-      objectReference: {fileID: 1358623287069523329, guid: 32823d50eb0644c6b9887245a3cc4126, type: 3}
+      objectReference: {fileID: 1358623287069523329, guid: 33235d263e0ec436d9273618acb6ec36, type: 3}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[1].levels.Array.data[0].scale.x
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[1].levels.Array.data[0].scale.y
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[1].levels.Array.data[0].scale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
       propertyPath: facilityPrefabs.Array.data[1].levels.Array.data[1].scale.x
       value: 0.18
@@ -1837,6 +1861,10 @@ PrefabInstance:
     - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
       propertyPath: facilityPrefabs.Array.data[1].levels.Array.data[1].scale.y
       value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[2].levels.Array.data[0].scale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
       propertyPath: facilityPrefabs.Array.data[2].levels.Array.data[3].scale.x
@@ -1847,6 +1875,58 @@ PrefabInstance:
       value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[3].levels.Array.data[0].scale.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[3].levels.Array.data[0].scale.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[3].levels.Array.data[0].scale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[4].levels.Array.data[0].scale.x
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[4].levels.Array.data[0].scale.y
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[4].levels.Array.data[0].scale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[5].levels.Array.data[0].scale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[5].levels.Array.data[0].scale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[5].levels.Array.data[0].scale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[6].levels.Array.data[0].scale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[1].levels.Array.data[0].position.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[1].levels.Array.data[0].position.y
+      value: 1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[2].levels.Array.data[0].position.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
       propertyPath: facilityPrefabs.Array.data[2].levels.Array.data[2].position.y
       value: 1.51
       objectReference: {fileID: 0}
@@ -1855,8 +1935,20 @@ PrefabInstance:
       value: 1.51
       objectReference: {fileID: 0}
     - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[3].levels.Array.data[0].position.y
+      value: -2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
       propertyPath: facilityPrefabs.Array.data[3].levels.Array.data[3].position.x
       value: 3.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[5].levels.Array.data[0].position.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323207759749272771, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
+      propertyPath: facilityPrefabs.Array.data[5].levels.Array.data[0].position.y
+      value: 3.06
       objectReference: {fileID: 0}
     - target: {fileID: 6495858302371282297, guid: 24c79835723224125a459ad524dc5b7b, type: 3}
       propertyPath: m_LocalPosition.x

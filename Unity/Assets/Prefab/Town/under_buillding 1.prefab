@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8860039520878583034}
   - component: {fileID: 3862067389161424083}
   - component: {fileID: -3795565884279571353}
-  - component: {fileID: 1595468182508722883}
+  - component: {fileID: -1067688807152191791}
   m_Layer: 0
-  m_Name: under_buillding
+  m_Name: under_buillding 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,8 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef965932063146c595d108affad8c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickObject
-  facilityName: blacksmith
---- !u!61 &1595468182508722883
+  facilityName: farm
+--- !u!61 &-1067688807152191791
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
